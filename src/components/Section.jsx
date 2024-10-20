@@ -28,14 +28,24 @@ export default function Section({ content, handleContent, defaultContent, Form, 
   };
 
   return (
-    <div>
-      <h2>{title}</h2>
+    <div className="flex flex-col items-start bg-white rounded-lg p-5 space-y-4 w-96">
+      <h2 className="text-2xl font-bold">{title}</h2>
       {typeof activeIndex === "number" ? (
         <>
           <Form content={content[activeIndex]} handleChange={handleChange} />
-          <div>
-            <button onClick={() => handleDelete()}>Delete</button>
-            <button onClick={() => setActiveIndex(null)}>Done</button>
+          <div className="w-full flex justify-between">
+            <button
+              onClick={() => handleDelete()}
+              className="text-sm text-gray-600 font-medium px-4 py-2 border border-gray-600 rounded-lg"
+            >
+              Delete
+            </button>
+            <button
+              onClick={() => setActiveIndex(null)}
+              className="text-sm text-white font-bold bg-blue-500 px-4 py-2 rounded-lg"
+            >
+              Done
+            </button>
           </div>
         </>
       ) : (
@@ -43,7 +53,12 @@ export default function Section({ content, handleContent, defaultContent, Form, 
           {content.map((details, index) => (
             <ListItem key={index} index={index} title={Object.values(details)[0]} onClick={setActiveIndex} />
           ))}
-          <button onClick={() => handleAdd()}>Add {title}</button>
+          <button
+            onClick={() => handleAdd()}
+            className="ml-auto text-sm text-white font-bold bg-blue-500 px-4 py-2 rounded-lg"
+          >
+            Add {title}
+          </button>
         </>
       )}
     </div>

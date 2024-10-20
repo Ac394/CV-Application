@@ -55,8 +55,8 @@ function App() {
   ]);
 
   return (
-    <>
-      <div>
+    <div className="flex justify-between gap-5">
+      <div className="space-y-5">
         <PersonalDetails content={personalDetails} handleContent={setPersonalDetails} />
         <Section
           content={educationDetails}
@@ -75,7 +75,7 @@ function App() {
       </div>
 
       <Resume person={personalDetails} education={educationDetails} experience={experienceDetails} />
-    </>
+    </div>
   );
 }
 

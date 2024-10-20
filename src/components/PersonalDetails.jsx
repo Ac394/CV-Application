@@ -7,9 +7,9 @@ export default function PersonalDetails({ content, handleContent }) {
   };
 
   return (
-    <>
-      <h2>Personal Details</h2>
-      <div className="container">
+    <div className="bg-white p-5 rounded-lg space-y-4">
+      <h2 className="text-start text-2xl font-bold">Personal Details</h2>
+      <div className="space-y-4">
         <InputItem
           title="Full Name"
           type="name"
@@ -43,6 +43,6 @@ export default function PersonalDetails({ content, handleContent }) {
           handleChange={handleChange}
         />
       </div>
-    </>
+    </div>
   );
 }
